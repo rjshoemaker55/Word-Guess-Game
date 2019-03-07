@@ -8,12 +8,31 @@ var spot7 = document.getElementById("spot7");
 var spot8 = document.getElementById("spot8");
 var spot9 = document.getElementById("spot9");
 
-var wordArray = [
-  "A",
-  "B",
-  "C",
-  "D",
+var guessesDiv = document.getElementById("guesses-div");
+
+var spotArray = [
+  spot1,
+  spot2,
+  spot3,
+  spot4,
+  spot5,
+  spot6,
+  spot7,
+  spot8,
+  spot9
 ];
+
+var wordArray = [
+  "R",
+  "A",
+  "Y",
+  "M",
+  "O",
+  "N",
+  "D"
+];
+
+var guesses = 15;
 
 console.log(wordArray.length)
 
@@ -94,6 +113,29 @@ function setSpaces() {
 
 }
 
+function guessLetter(letterGuess) {
 
+  var letterGuess = letterGuess.toUpperCase();
+
+  if (wordArray.includes(letterGuess)) {
+    console.log("Word includes " + letterGuess)
+    var letterIndex = wordArray.indexOf(letterGuess)
+    console.log("Index of " + letterGuess + " is " + letterIndex)
+    spotArray[letterIndex].textContent = wordArray[letterIndex];
+  } else {
+    console.log("Word does not include " + letterGuess)
+    guesses--;
+  }
+    guessesDiv.textContent = guesses;
+    /* SUBTRACT POINT/ADD LETTER TO GUESSED */
+
+}
 
 setSpaces();
+guessesDiv.textContent = guesses;
+
+if(guesses >= 0) {
+  document.onkeyup = function(event) {
+    guessLetter(event.key);
+  }
+}
