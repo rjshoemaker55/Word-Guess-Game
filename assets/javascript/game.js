@@ -128,9 +128,10 @@ function guessLetter(letterGuess) {
     console.log("Word does not include " + letterGuess)
     guesses--;
   }
+
+  var blankSpots = 0;
   for (i=0; i <= currentWordArray.length; i++) {
 
-    var blankSpots = 0;
 
   if (spotArray[i].textContent === "_") {
     blankSpots++;
