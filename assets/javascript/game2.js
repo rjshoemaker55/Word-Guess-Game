@@ -34,7 +34,7 @@ var wordArray = [
 
 var guesses = 15;
 guessesDiv.textContent = guesses
-var currentWordArray = wordArray[Math.round(Math.random() * 3)]
+var currentWordArray = wordArray[Math.round(Math.random() * 5)]
 var blankSpaces = currentWordArray.length
 var gameOver = false
 var lettersGuessed = []
