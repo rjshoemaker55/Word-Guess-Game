@@ -34,7 +34,7 @@ var wordArray = [
 
 var guesses = 15;
 guessesDiv.textContent = guesses
-var currentWordArray = wordArray[Math.round(Math.random() * 5)]
+var currentWordArray = wordArray[Math.round(Math.random() * 4)]
 var blankSpaces = currentWordArray.length
 var gameOver = false
 var lettersGuessed = []
@@ -47,7 +47,7 @@ function setSpaces() {
   textChanger.textContent = "Guess a letter."
   guesses = 15;
   guessesDiv.textContent = guesses
-  currentWordArray = wordArray[Math.round(Math.random() * 3)]
+  currentWordArray = wordArray[Math.round(Math.random() * 4)]
   blankSpaces = currentWordArray.length
   gameOver = false
   lettersGuessed = []
